@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.hackupc2017w.motocare"
         minSdkVersion 22
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,5 +25,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
     testCompile 'junit:junit:4.12'
 }
