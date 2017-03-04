@@ -26,7 +26,7 @@ public class BluetoothHelper{
     private BluetoothListener mListener;
 
     public interface BluetoothListener {
-        public void onDeviceFound(String s);
+        public void onDeviceFound(String s, BluetoothDevice d);
     }
 
     public BluetoothHelper(Context c, BluetoothListener l) {
@@ -55,7 +55,7 @@ public class BluetoothHelper{
                     // Get the BluetoothDevice object from the Intent
                     BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                     // Add the name and address to an array adapter to show in a ListView
-                    mListener.onDeviceFound(device.getName() + "\n" + device.getAddress());
+                    mListener.onDeviceFound(device.getName() + "\n" + device.getAddress(),device);
                     System.out.println(device.getName() + "\n" + device.getAddress());
                 }
             }
@@ -86,7 +86,12 @@ public class BluetoothHelper{
         mBluetoothAdapter.cancelDiscovery();
         if (discoveryMonitor != null){
             context.unregisterReceiver(discoveryMonitor);
+            discoveryMonitor = null;
         }
+    }
+
+    public void pairDevice(BluetoothDevice bluetoothDevice){
+        System.out.println(bluetoothDevice.getName());
     }
 
 

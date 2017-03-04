@@ -1,8 +1,10 @@
 package com.hackupc2017w.motocare;
 
+import android.bluetooth.BluetoothDevice;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements BluetoothHelper.B
     private Button mButton;
     private ArrayAdapter<String> mAdapter;
     private ArrayList<String> mListData = new ArrayList<>();
+    private ArrayList<BluetoothDevice> mBluetoothDevices = new ArrayList<>();
     private Button mStop;
 
     @Override
@@ -32,10 +35,18 @@ public class MainActivity extends AppCompatActivity implements BluetoothHelper.B
         mAdapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.simple_list_item_1,mListData);
         mListView.setAdapter(mAdapter);
 
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mBluetoothHelper.pairDevice(mBluetoothDevices.get(i));
+            }
+        });
+
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListData.clear();
+                mBluetoothDevices.clear();
                 mBluetoothHelper.getAviableDevices();
             }
         });
@@ -56,8 +67,9 @@ public class MainActivity extends AppCompatActivity implements BluetoothHelper.B
     }
 
     @Override
-    public void onDeviceFound(String s) {
+    public void onDeviceFound(String s,BluetoothDevice d) {
         mListData.add(s);
+        mBluetoothDevices.add(d);
         mAdapter.notifyDataSetChanged();
     }
 }

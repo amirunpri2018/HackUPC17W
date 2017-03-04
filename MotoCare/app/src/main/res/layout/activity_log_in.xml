@@ -4,8 +4,14 @@
     android:id="@+id/activity_log_in"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_screen_b"
     tools:context="com.hackupc2017w.motocare.LogInActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_screen_b"
+        android:scaleType="centerCrop"
+        />
 
     <TextView
         android:layout_width="match_parent"
