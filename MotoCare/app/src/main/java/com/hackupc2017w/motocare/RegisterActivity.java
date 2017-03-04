@@ -92,6 +92,8 @@ public class RegisterActivity extends AppCompatActivity {
                         editor.apply();
                         finish();
                     } else {
+                        formView.setVisibility(View.VISIBLE);
+                        loadingView.setVisibility(View.GONE);
                         Snackbar.make(view, "You are already registered please login", Snackbar.LENGTH_LONG)
                                 .show();
                     }
