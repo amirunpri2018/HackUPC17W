@@ -7,7 +7,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.widget.Toast;
 
@@ -117,7 +116,9 @@ public class BluetoothHelper{
     }
 
     public void stopSearch(){
-        mBluetoothAdapter.cancelDiscovery();
+        if (mBluetoothAdapter != null){
+            mBluetoothAdapter.cancelDiscovery();
+        }
         if (discoveryMonitor != null){
             context.unregisterReceiver(discoveryMonitor);
             context.unregisterReceiver(mPairReceiver);
