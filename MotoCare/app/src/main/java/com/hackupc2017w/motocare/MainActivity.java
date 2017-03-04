@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity implements BluetoothHelper.B
             }
         });
 
+        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mBluetoothHelper.unpairDevice(mBluetoothDevices.get(i));
+                return true;
+            }
+        });
+
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
