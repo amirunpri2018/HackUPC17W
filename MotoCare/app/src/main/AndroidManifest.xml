@@ -28,7 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity"/>
+
+        <service
+            android:name=".PlayerService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
         <receiver android:name=".NotificationPublisher" />
     </application>
 
