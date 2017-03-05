@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //    startPreAccident();
+                startPreAccident();
             }
         });
 
@@ -128,9 +128,14 @@ public class MainActivity extends AppCompatActivity {
                         for (BlueteethDevice device : blueteethDevices) {
                             if (!TextUtils.isEmpty(device.getBluetoothDevice().getName())) {
                                 Log.v("MAIN ACTIVITY", device.getName() + " " + device.getMacAddress());
-                                mBluetoothDevices.add(device);
-                                mListData.add(device.getName());
-
+                                boolean trobat = false;
+                                for (String s: mListData) {
+                                    if(s.equals(device.getName())) trobat = true;
+                                }
+                                if(!trobat){
+                                    mBluetoothDevices.add(device);
+                                    mListData.add(device.getName());
+                                }
                             }
                         }
 
@@ -172,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startPreAccident() {
-        scheduleNotification(getNotification("BUUU"), 5000);
+        scheduleNotification(getNotification("Are you okay?"), 5000);
         startService(intent);
     }
 
@@ -195,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Notification getNotification(String content) {
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setContentTitle("Scheduled Notification");
+        builder.setContentTitle("MotoCare");
         builder.setContentText(content);
         builder.setSmallIcon(R.mipmap.ic_launcher);
         Intent serviceIntent = new Intent(this, PlayerService.class);

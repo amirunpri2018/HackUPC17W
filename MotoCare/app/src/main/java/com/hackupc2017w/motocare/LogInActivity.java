@@ -24,9 +24,9 @@ public class LogInActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(App.APP_PREFS, MODE_PRIVATE);
         preferences.getInt("userId", -1);
 
-        if (preferences.getInt("userId", -1) != -1) {
+       /* if (preferences.getInt("userId", -1) != -1) {
             startMainActivity();
-        }
+        }*/
         setContentView(R.layout.activity_log_in);
         ButterKnife.bind(this);
 
@@ -65,6 +65,6 @@ public class LogInActivity extends AppCompatActivity {
 
     @OnClick(R.id.register_button) public void registerNewUser() {
         startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-        finish();
+        //finish();
     }
 }

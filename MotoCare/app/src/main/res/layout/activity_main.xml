@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.hackupc2017w.motocare.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_screen_b"
+        android:scaleType="centerCrop"
+        />
 
     <Button
         android:id="@+id/search_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
         android:text="Search devices"/>
     <Button
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/search_stop"
         android:text="Stop search"/>
 
     <ListView
-        android:layout_margin="5dp"
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:background="@android:color/darker_gray"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/search_button">
     </ListView>
 
-</LinearLayout>
+</RelativeLayout>
