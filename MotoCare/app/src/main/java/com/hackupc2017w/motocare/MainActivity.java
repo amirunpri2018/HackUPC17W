@@ -1,9 +1,13 @@
 package com.hackupc2017w.motocare;
 
-import android.bluetooth.BluetoothAdapter;
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -26,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private ListView mListView;
     private Button mButton;
@@ -34,6 +38,9 @@ public class MainActivity extends AppCompatActivity{
     private ArrayList<String> mListData = new ArrayList<>();
     private ArrayList<BlueteethDevice> mBluetoothDevices = new ArrayList<>();
     private Button mStop;
+
+    private static final int TRUE = 1;
+    private static final int FALSE = 0;
 
     private BlueteethDevice currentDevice;
 
@@ -57,43 +64,50 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        mStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startPreAccident();
+            }
+        });
+
         mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    final BlueteethDevice device = mBluetoothDevices.get(i);
-                    device.connect(true, new OnConnectionChangedListener() {
-                        @Override
-                        public void call(final boolean isConnected) {
-                            new Handler(Looper.getMainLooper()).post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getApplicationContext(),"Connection changed "+ isConnected,Toast.LENGTH_LONG)
-                                            .show();
-                                }
-                            });
+                final BlueteethDevice device = mBluetoothDevices.get(i);
+                device.connect(true, new OnConnectionChangedListener() {
+                    @Override
+                    public void call(final boolean isConnected) {
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), "Connection changed " + isConnected, Toast.LENGTH_LONG)
+                                        .show();
+                            }
+                        });
+                        device.discoverServices(new OnServicesDiscoveredListener() {
+                            @Override
+                            public void call(BlueteethResponse response) {
+                                Log.v("Main activity 2", response.name());
+                            }
+                        });
+
+                        if (isConnected) {
+                            currentDevice = device;
                             device.discoverServices(new OnServicesDiscoveredListener() {
                                 @Override
                                 public void call(BlueteethResponse response) {
-                                    Log.v("Main activity 2", response.name());
+                                    Log.v("Main activity", response.name());
+                                    handler.post(runnable);
                                 }
                             });
-
-                            if(isConnected) {
-                                currentDevice = device;
-                                device.discoverServices(new OnServicesDiscoveredListener() {
-                                    @Override
-                                    public void call(BlueteethResponse response) {
-                                        Log.v("Main activity", response.name());
-                                        handler.post(runnable);
-                                    }
-                                });
-                            }else {
-                                currentDevice = null;
-                                handler.removeCallbacks(runnable);
-                            }
+                        } else {
+                            currentDevice = null;
+                            handler.removeCallbacks(runnable);
                         }
+                    }
 
-                    });
+                });
                 return true;
             }
         });
@@ -129,21 +143,49 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public void run() {
             read();
-            handler.postDelayed(runnable,500);
+            handler.postDelayed(runnable, 500);
         }
     };
 
-    void read(){
+    void read() {
 
         currentDevice.readCharacteristic(UUID.fromString("19B10012-E8F2-537E-4F6C-D104768A1214"),
                 UUID.fromString("19B10010-E8F2-537E-4F6C-D104768A1214"), new OnCharacteristicReadListener() {
-            @Override
-            public void call(BlueteethResponse response, byte[] data) {
-                //String resposta = new String(data);
-                if(data.length > 0) Log.v("MAIN", ""+data[0]);
+                    @Override
+                    public void call(BlueteethResponse response, byte[] data) {
+                        //String resposta = new String(data);
+                        if (data.length > 0) Log.v("MAIN", "" + data[0]);
 
-            }
-        });
+                        if (data[0] == TRUE) {
+                            startPreAccident();
+                        }
+
+                    }
+                });
+    }
+
+    private void startPreAccident() {
+        scheduleNotification(getNotification("BUUU"), 5000);
+    }
+
+    private void scheduleNotification(Notification notification, int delay) {
+
+        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager) getSystemService(getApplicationContext().ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
+    }
+
+    private Notification getNotification(String content) {
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentTitle("Scheduled Notification");
+        builder.setContentText(content);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        return builder.build();
     }
 
 }
