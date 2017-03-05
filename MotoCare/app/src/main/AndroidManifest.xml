@@ -3,11 +3,6 @@
     package="com.hackupc2017w.motocare">
 
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
     <uses-feature android:name="android.hardware.location.gps" />
 
@@ -28,7 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity"/>
+
+        <service
+            android:name=".PlayerService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>
