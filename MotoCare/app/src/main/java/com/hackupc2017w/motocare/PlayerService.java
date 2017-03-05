@@ -15,28 +15,34 @@ public class PlayerService extends Service {
 
     public PlayerService() {
         mediaPlayer = new MediaPlayer();
-
+        try {
+            File sdCard = Environment.getExternalStorageDirectory();
+            File song = new File(sdCard.getAbsolutePath() + "/alarm.mp3");
+            mediaPlayer.setDataSource(song.getAbsolutePath());
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+            mediaPlayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        File sdCard = Environment.getExternalStorageDirectory();
-        File song = new File(sdCard.getAbsolutePath() + "/alarm.mp3");
+
         try {
-            mediaPlayer.setDataSource(song.getAbsolutePath());
-            mediaPlayer.prepare();
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+
+
             final AudioManager mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
             final int originalVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_ALARM);
-            mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
+            mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, mAudioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM), 0);
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-                    mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, originalVolume, 0);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, originalVolume, 0);
                 }
             });
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         mediaPlayer.setLooping(true);
@@ -56,7 +62,5 @@ public class PlayerService extends Service {
         super.onDestroy();
         mediaPlayer.setLooping(false);
         mediaPlayer.stop();
-        mediaPlayer.release();
-        mediaPlayer.reset();
     }
 }

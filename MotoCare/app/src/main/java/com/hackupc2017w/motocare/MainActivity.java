@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int FALSE = 0;
 
     private BlueteethDevice currentDevice;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 startPreAccident();
             }
         });
+
+        intent = new Intent(getApplicationContext(), PlayerService.class);
+
 
         mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -159,6 +163,9 @@ public class MainActivity extends AppCompatActivity {
                         if (data[0] == TRUE) {
                             startPreAccident();
                         }
+                        else {
+                            stopService(intent);
+                        }
 
                     }
                 });
@@ -166,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startPreAccident() {
         scheduleNotification(getNotification("BUUU"), 5000);
+        startService(intent);
     }
 
     private void scheduleNotification(Notification notification, int delay) {
