@@ -1,3 +1,5 @@
+## HACKUPC WINTER 2017
+
 # INSPIRATION
 Traffic accidents are frequent every day and although it would be over-optimistic pretending to achieve zero victims, we can do our best to decrease human loses. We’ve decided to focus on motorbikes, but the concept is extensible to other types or vehicles. On the other hand, in special situations, emergency services need to know the amount of people in danger within a certain zone, and if they need urgent assistance.
 
