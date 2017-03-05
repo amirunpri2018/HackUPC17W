@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startPreAccident();
+            //    startPreAccident();
             }
         });
 
@@ -158,15 +158,15 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void call(BlueteethResponse response, byte[] data) {
                         //String resposta = new String(data);
-                        if (data.length > 0) Log.v("MAIN", "" + data[0]);
+                        if (data.length > 0) {
+                            Log.v("MAIN", "" + data[0]);
 
-                        if (data[0] == TRUE) {
-                            startPreAccident();
+                            if (data[0] == TRUE) {
+                                startPreAccident();
+                            } else {
+                                stopService(intent);
+                            }
                         }
-                        else {
-                            stopService(intent);
-                        }
-
                     }
                 });
     }
@@ -178,10 +178,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void scheduleNotification(Notification notification, int delay) {
 
-        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        Intent notificationIntent = new Intent(this, MainActivity.class);
         notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
         notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Intent intent = new Intent(this,NotificationPublisher.class);
+        intent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        intent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        sendBroadcast(intent);
 
         long futureInMillis = SystemClock.elapsedRealtime() + delay;
         AlarmManager alarmManager = (AlarmManager) getSystemService(getApplicationContext().ALARM_SERVICE);
@@ -193,6 +198,12 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentTitle("Scheduled Notification");
         builder.setContentText(content);
         builder.setSmallIcon(R.mipmap.ic_launcher);
+        Intent serviceIntent = new Intent(this, PlayerService.class);
+        serviceIntent.putExtra("state", "stop");
+        PendingIntent pendingIntent = PendingIntent.getService(this, 0, serviceIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        Notification.Action action = new Notification.Action(android.R.drawable.ic_input_delete, "STOP", pendingIntent);
+        builder.addAction(action);
         return builder.build();
     }
 

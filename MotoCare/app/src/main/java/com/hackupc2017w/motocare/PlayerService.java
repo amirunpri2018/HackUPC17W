@@ -29,6 +29,12 @@ public class PlayerService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        if (!intent.hasExtra("state")) play();
+        else if (mediaPlayer.isPlaying())  stop();
+        return START_NOT_STICKY;
+    }
+
+    public void play() {
         try {
 
 
@@ -47,8 +53,6 @@ public class PlayerService extends Service {
         }
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
-
-        return START_NOT_STICKY;
     }
 
     @Override
@@ -60,6 +64,10 @@ public class PlayerService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        stop();
+    }
+
+    public void stop() {
         mediaPlayer.setLooping(false);
         mediaPlayer.stop();
     }
