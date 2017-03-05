@@ -84,12 +84,15 @@ public class MainActivity extends AppCompatActivity{
                                     @Override
                                     public void call(BlueteethResponse response) {
                                         Log.v("Main activity", response.name());
-                                        read();
+                                        handler.post(runnable);
                                     }
                                 });
+                            }else {
+                                currentDevice = null;
+                                handler.removeCallbacks(runnable);
                             }
-                            else currentDevice = null;
                         }
+
                     });
                 return true;
             }
@@ -121,12 +124,23 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    final Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            read();
+            handler.postDelayed(runnable,500);
+        }
+    };
+
     void read(){
+
         currentDevice.readCharacteristic(UUID.fromString("19B10012-E8F2-537E-4F6C-D104768A1214"),
                 UUID.fromString("19B10010-E8F2-537E-4F6C-D104768A1214"), new OnCharacteristicReadListener() {
             @Override
             public void call(BlueteethResponse response, byte[] data) {
-                String resposta = new String(data);
+                //String resposta = new String(data);
+                if(data.length > 0) Log.v("MAIN", ""+data[0]);
 
             }
         });
