@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="201851807398591"
+    token="8634569222931484027"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="1324" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="777" />
+    <task
+        name="verifier"
+        duration="122" />
+
+    <artifact
+        location="C:\HackUPC17W\BluetoothLeGatt\Application\build\outputs\apk\Application-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="201851807398591"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\HackUPC17W\BluetoothLeGatt\Application\build\outputs\apk\Application-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

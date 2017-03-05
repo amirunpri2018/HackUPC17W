@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_380206ade8613da5dc3e089d2a80a5b0a7b79eb2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_329a7d5710a1715e8604478c58fbbe877f94f2fb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aea6a97af87544bc2452d8e8cc4c9785788424bb">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_1f29211a71bbb7eb61762ece6631cf74f9d0e26a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b4ec845d8dc886d7148e80e97773cfb1e800c5e">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a50508a506272fb38e3a249695ee12309fee3e90\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_2a7f926c8e7752eeb73928308cdbd8ba5ed3ee27\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_51ab30143fbff50b8779a9626e6d377c1c44e7c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_177a9d440777469af5e222d7f7a194f94c5aa7ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9abf11d546d9e0ee82da86df608ced7a961b76ac">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-25.0.1_24b8d4384973f4f078d927c020fb27f27744fbbc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.1_ccf12ebd2a4e288af0315034c9591bf6cf5a6534\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_b663cbb81ecf2fba4ae0c87d11c3767f5cfb241f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_c021675cb86db58d93be6ef1896bdad10d20f2c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cfb91ea7c6890336890ccb42767041af6b863e32">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_eb93228936eedbf951da8fab2dd4c8ad56d712bd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_cab2396fc271c4e616385e908c9279822436f8c2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_bf7b7d868fd2a4850ff6b09702ac12b39806e203\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_ab3101c02d0e7fd21b0b4c5ea7df00127c25e6b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_44f5025b292bfb17df7c30b66bfed804ea60f344\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_bbff49152f666ad97b58bc075c336d34c09c91a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_9fd3bb1f93a92bad2b0606bf278af8585a5565c0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_40a20fed9b943df4b40a234efe9cab40b2421e9d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\HackUPC17W\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_9ce834809f31dc3f270e682d4e41adc3df00dba6\classes.dex" />
+    </item>
+
+</items>

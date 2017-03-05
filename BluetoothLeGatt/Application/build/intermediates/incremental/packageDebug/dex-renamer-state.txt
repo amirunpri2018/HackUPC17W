@@ -1,0 +1,7 @@
+#Sat Mar 04 22:16:35 CET 2017
+base.0=C\:\\HackUPC17W\\BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a50508a506272fb38e3a249695ee12309fee3e90
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\HackUPC17W\\BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_1f29211a71bbb7eb61762ece6631cf74f9d0e26a\\classes.dex
+base.1=C\:\\HackUPC17W\\BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_1f29211a71bbb7eb61762ece6631cf74f9d0e26a
+file.0=C\:\\HackUPC17W\\BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a50508a506272fb38e3a249695ee12309fee3e90\\classes.dex
